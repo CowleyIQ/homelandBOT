@@ -2106,7 +2106,6 @@ Text = [[
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
 🔖homeland TEAM
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-
 📮↬[Channel homeland](t.me/iraqqpqp) 
 
 🔰↬[Information](t.me/iraqqpqp1)
