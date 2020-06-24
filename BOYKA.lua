@@ -2104,9 +2104,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 Text = [[
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-
 🔖homeland TEAM
-
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 
 📮↬[Channel homeland](t.me/iraqqpqp) 
