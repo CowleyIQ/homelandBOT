@@ -416,7 +416,7 @@ local BOYKA_Msg = ''
 if msgs < 100 then 
 BOYKA_Msg = 'غير متفاعل😔💔' 
 elseif msgs < 200 then 
-BOYKA_Msg = 'بده يتحسن😕💔' 
+BOYKA_Msg = 'رايدله مولده 🤪🤣' 
 elseif msgs < 400 then 
 BOYKA_Msg = 'شبه متفاعل😗👻' 
 elseif msgs < 700 then 
@@ -2103,19 +2103,20 @@ end
 
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 Text = [[
-🔘┇اهلا بك في سورس وطن 🦅
- ء━━━━━━━━━━━━━━
-🔰┇homeland TEAM
- ء━━━━━━━━━━━━━━
-📮┇[قناه السورس](t.me/iraqqpqp) 
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
 
-👮‍♂️┇[مطور السورس الاول](t.me/sarazzqpqpvevo)
+🔖homeland TEAM
 
-👮‍♂️┇[مطور السورس الثاني](t.me/hu4_yaB)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 
-🔖┇[كليشه التنصيب](https://t.me/iraqqpqp/6691)
+📮↬[Channel homeland](t.me/iraqqpqp) 
 
-📌┇[لــ تواصل](t.me/sarazzqpqpvevo)
+🔰↬[Information](t.me/iraqqpqp1)
+
+👮‍♂️↬[DEVELOPER](t.me/sarazzqpqpvevo)
+
+🔖↬[The way his inauguration](https://t.me/CowleyUS/3)
+ 
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
