@@ -855,24 +855,14 @@ if text == 'الاصدار 📟' and SudoBot(msg) then
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,'📡| اصدار سورس وطن \n📟| الاصدار ←{ 1.2v}') 
 end
-if MsgText[1] == 'معلومات السيرفر 📊' then
-if not msg.SudoUser then return "For Sudo Only." end
-return io.popen([[
-
-linux_version=`lsb_release -ds`
-memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
-HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
-CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
-
-echo '📟l •⊱ { نظام التشغيل } ⊰•\n*»» '"$linux_version"'*' 
-echo '*------------------------------\n*🔖l •⊱ { الذاكره العشوائيه } ⊰•\n*»» '"$memUsedPrc"'*'
-echo '*------------------------------\n*💾l •⊱ { وحـده الـتـخـزيـن } ⊰•\n*»» '"$HardDisk"'*'
-echo '*------------------------------\n*⚙️l •⊱ { الـمــعــالــج } ⊰•\n*»» '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '*------------------------------\n*📡l •⊱ { موقـع الـسـيـرفـر } ⊰•\n*»» ]]..DataCenter..[[*'
-echo '*------------------------------\n*👨🏾‍🔧l •⊱ { الــدخــول } ⊰•\n*»» '`whoami`'*'
-echo '*------------------------------\n*🔌l •⊱ { مـده تـشغيـل الـسـيـرفـر } ⊰•  \n*»» '"$uptime"'*'
-]]):read('*all')
+if text == 'معلومات السيرفر 📊' and SudoBot(msg) then 
+ local text2 = 'Info Server : \n'
+  local BOYKA1 = database:info()
+  text2 = text2..'1 - *Uptime Days* : `'..BOYKA1.server.uptime_in_days..'('..BOYKA1.server.uptime_in_seconds..' seconds)`\n'
+  text2 = text2..'2 - *Commands Processed* : `'..BOYKA1.stats.total_commands_processed..'`\n'
+  text2 = text2..'3 - *Expired Keys* : `'..BOYKA1.stats.expired_keys..'`\n'
+  text2 = text2..'4 - *Ops/sec* : `'..BOYKA1.stats.instantaneous_ops_per_sec..'`\n'
+send(msg.chat_id_, msg.id_, text2)  
 end
 if text == 'معلومات الكيبورت 💬' and SudoBot(msg) then 
 database:del(bot_id..'Sart:Bot') 
@@ -8703,6 +8693,17 @@ end
 end
 end
 
+if text:match("^كول (.*)$") then
+local txt = {string.match(text, "^(كول) (.*)$")}
+send(msg.chat_id_, 0, txt[2], "md")
+local id = msg.id_
+local msgs = {
+[0] = id
+}
+local chat = msg.chat_id_
+delete_msg(chat, msgs)
+end
+   
 if text and text:match("^تغير رد المطور (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد المطور (.*)$") 
 database:set(bot_id.."Sudo:Rd"..msg.chat_id_,Teext)
